@@ -1,5 +1,5 @@
-require 'rails_helper'
-
-RSpec.describe Store, type: :model do
-  store = Store.create!(long_name: "")
-end
+# require 'rails_helper'
+#
+# xRSpec.describe Store, type: :model do
+#   store = Store.create!(long_name: "")
+# end

@@ -19,7 +19,7 @@ class Api::V1::ItemsController < ApplicationController
   def destroy
     @item = Item.find(params[:id])
     if @item.destroy
-      render json: @item
+      head :no_content
     else
       render :status => 404
     end
