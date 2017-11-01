@@ -1,5 +1,33 @@
 require 'rails_helper'
 
+feature "as a user" do
+    context "when I visit the root page" do
+      it "I can click on a destination and see the destination's info and forecast" do
+
+        visit "/"
+
+        fill_in 'search', with: '80202'
+        click_on "search"
+        #And I fill in a search box with "80202" and click "search"
+
+        expect(current_path).to eq("/search")
+        expect(page).to have_content("17 Total Stores")
+
+        expect(page).to have_css(".store", count: 17)
+        #Get the first page to work first from start to finish and worry about pagination later.
+
+        within(".store:first-of-type") do
+          expect(page).to have_css(".long_name")
+          expect(page).to have_css(".city")
+          expect(page).to have_css(".distance")
+          expect(page).to have_css(".phone_number")
+          expect(page).to have_css(".store_type")
+        end
+
+    end
+  end
+end
+
 # As a user
 # When I visit "/"
 # And I fill in a search box with "80202" and click "search"
