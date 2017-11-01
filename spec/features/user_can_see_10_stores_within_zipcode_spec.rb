@@ -11,10 +11,9 @@ feature "as a user" do
         #And I fill in a search box with "80202" and click "search"
 
         expect(current_path).to eq("/search")
-        expect(page).to have_content("17 Total Stores")
+        # expect(page).to have_content("17 Total Stores")
 
-        expect(page).to have_css(".store", count: 17)
-        #Get the first page to work first from start to finish and worry about pagination later.
+        expect(page).to have_css(".store", count: 10)
 
         within(".store:first-of-type") do
           expect(page).to have_css(".long_name")

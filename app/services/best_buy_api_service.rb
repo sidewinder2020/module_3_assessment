@@ -2,7 +2,6 @@ class BestBuyApiService
 
   def initialize
     @conn = Faraday.new('https://api.bestbuy.com/v1/') do |faraday|
-      faraday.headers["X-API-KEY"] = "ENV['best_buy_api_key']"
       faraday.adapter Faraday.default_adapter
     end
   end
