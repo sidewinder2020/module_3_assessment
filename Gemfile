@@ -16,6 +16,7 @@ gem 'rspec-rails'
 gem 'database_cleaner'
 gem 'faraday'
 gem 'figaro'
+gem 'active_model_serializers', '~> 0.10.0'
 
 group :development do
   gem "spring"
