@@ -20,9 +20,9 @@
         <a href="/orders">Orders</a>
       </li>
       <li>
-        <%= form_tag :search, method: :get, class: "form-inline" do %>
+        <%= form_tag('/search') do |f| %>
           <div class="form-group search-field">
-            <%= text_field_tag 'search' %>
+            <%= text_field_tag 'zipcode' %>
             <%= submit_tag "search", class: "btn btn-primary" %>
           </div>
         <% end %>

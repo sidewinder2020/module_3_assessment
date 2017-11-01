@@ -1,5 +1,5 @@
 class SearchController < ApplicationController
-  def index
+  def create
     @stores = StoreSearchService.new(params['zipcode']).stores
   end
 end

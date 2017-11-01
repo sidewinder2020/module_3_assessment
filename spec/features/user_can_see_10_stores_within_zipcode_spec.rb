@@ -6,7 +6,7 @@ feature "as a user" do
 
         visit "/"
 
-        fill_in 'search', with: '80202'
+        fill_in 'zipcode', with: '80202'
         click_on "search"
         #And I fill in a search box with "80202" and click "search"
 
