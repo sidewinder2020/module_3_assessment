@@ -2,7 +2,7 @@ require 'rails_helper'
 
 feature "as a user" do
     context "when I visit the root page" do
-      it "I can click on a destination and see the destination's info and forecast" do
+      it "I can fill in a zipcode and see the zipcode's closest stores within 25 miles" do
 
         visit "/"
 
