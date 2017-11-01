@@ -50,7 +50,8 @@ describe "DELETE /api/v1/items/:id" do
     item = Item.create!(name: "Babbadook", description: "a scary movie", image_url: "https://www.jqueryscript.net/images/Simplest-Responsive-jQuery-Image-Lightbox-Plugin-simple-lightbox.jpg")
 
     delete "/api/v1/items/#{item.id}"
-    
+
+    expect(response.status).to eq 204
     expect(Item.count).to eq 0
   end
 end
