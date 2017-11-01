@@ -8,7 +8,7 @@ describe "Get /api/v1/items/:id" do
 
     response = JSON.parse(body)
 
-    expect(response["id"]).to eq(1)
+    expect(response["id"]).to eq (1)
     expect(response["name"]).to eq("Babbadook")
     expect(response["description"]).to eq("a scary movie")
     expect(response["image_url"]).to eq("https://www.jqueryscript.net/images/Simplest-Responsive-jQuery-Image-Lightbox-Plugin-simple-lightbox.jpg")
@@ -25,16 +25,16 @@ describe "Get /api/v1/items" do
     response = JSON.parse(body)
 
     expect(response.count).to eq 2
-    expect(response["id"]).to eq(1)
-    expect(response["name"]).to eq("Babbadook")
-    expect(response["description"]).to eq("a scary movie")
-    expect(response["image_url"]).to eq("https://www.jqueryscript.net/images/Simplest-Responsive-jQuery-Image-Lightbox-Plugin-simple-lightbox.jpg")
+    expect(response[0]["id"]).to eq(1)
+    expect(response[0]["name"]).to eq("Babbadook")
+    expect(response[0]["description"]).to eq("a scary movie")
+    expect(response[0]["image_url"]).to eq("https://www.jqueryscript.net/images/Simplest-Responsive-jQuery-Image-Lightbox-Plugin-simple-lightbox.jpg")
   end
 end
 
 describe "Post /api/v1/items" do
   it "creates an item" do
-    post "/api/v1/destinations?item[name]=Crazy&item[description]=hell&item[image_url]=https://www.jqueryscript.net/images/Simplest-Responsive-jQuery-Image-Lightbox-Plugin-simple-lightbox.jpg"
+    post "/api/v1/items?item[name]=Crazy&item[description]=hell&item[image_url]=https://www.jqueryscript.net/images/Simplest-Responsive-jQuery-Image-Lightbox-Plugin-simple-lightbox.jpg"
 
     response = JSON.parse(body)
 
